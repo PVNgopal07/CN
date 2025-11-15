@@ -1,0 +1,40 @@
+How to run Nmap scan 
+ 
+Requirements 
+● Nmap installed on Linux, Windows, or Mac 
+● Terminal/Command Prompt access 
+● Target IP (example: scanme.nmap.org or a local IP like 192.168.1.10) 
+ 
+Step-by-Step Lab Program 
+1. Basic Host Scan 
+This command discovers which devices are active on the subnet 
+nmap -sn 192.168.1.0/24 
+● Lists live hosts within the subnet, skips port scan. 
+ 
+2. Simple Port Scan 
+Scan open ports on a target device. 
+nmap scanme.nmap.org 
+● Displays which common ports (top 1000) are open and corresponding services. 
+ 
+3. Stealth SYN Scan 
+Performs a half-open TCP SYN scan for stealthier port detection. 
+nmap -sS scanme.nmap.org 
+● Detects open, closed, and filtered TCP ports. 
+4. Service and Version Detection 
+Finds out which services are running and their versions. 
+nmap -sV scanme.nmap.org 
+● Advanced scan, useful for service enumeration. 
+5. OS Detection and Aggressive Scan 
+Performs a scan including OS fingerprinting and traceroute. 
+nmap -A scanme.nmap.org 
+● Detailed results: OS, services, open ports, traceroute. 
+ 
+ 
+6. Scan Specific Ports 
+Scan only selected ports (e.g., 22, 80, 443). 
+nmap -p 22,80,443 scanme.nmap.org 
+● Saves time if searching for specific services 
+7. UDP Port Scan 
+Scans UDP services; slower but sometimes needed. 
+sudo nmap -sU scanme.nmap.org 
+● Run with sudo for privileged access.
